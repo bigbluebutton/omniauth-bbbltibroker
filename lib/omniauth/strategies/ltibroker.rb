@@ -4,7 +4,7 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Bbbltibroker < OmniAuth::Strategies::OAuth2
-      option :name, :bbbltibroker
+      option :name, :ltibroker
 
       option :client_options, {
         site: "http://localhost:3000",

@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "omniauth/bbbltibroker/version"
+require "omniauth/ltibroker/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "omniauth-bbbltibroker"
+  spec.name          = "omniauth-ltibroker"
   spec.version       = Omniauth::Bbbltibroker::VERSION
   spec.authors       = ["jfederico"]
   spec.email         = ["jesus@123it.ca"]
 
   spec.summary       = "An OmniAuth strategy for making use of BBB LTI Broker as Authentication Server thriugh OAuth2."
   spec.description   = spec.summary
-  spec.homepage      = "https://github.com/bigbluebutton/omniauth-bbbltibroker"
+  spec.homepage      = "https://github.com/bigbluebutton/omniauth-ltibroker"
   spec.license       = "GPL3"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

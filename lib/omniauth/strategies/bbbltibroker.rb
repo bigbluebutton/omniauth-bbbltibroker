@@ -15,15 +15,19 @@ module OmniAuth
       end
 
       info do
-        {
-          full_name: raw_info["full_name"],
-          first_name: raw_info["first_name"],
-          last_name: raw_info["last_name"]
-        }
+        info_map
       end
 
       def raw_info
-        @raw_info ||= access_token.get("#{options[:omniauth_root] || ''}/api/v1/user.json").parsed
+        @raw_info ||= access_token.get("#{options[:raw_info_url] || ''}").parsed
+      end
+
+      def info_map
+        map = {}
+        options[:info_params].each do |param|
+          map[param.to_sym] = raw_info[param]
+        end
+        map
       end
 
     end

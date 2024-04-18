@@ -32,11 +32,23 @@ module OmniAuth
 
       # Include the launch_nonce if it is part of the parameters in the request
       def setup_phase
+        Rails.logger.debug "(bbbltibroker) Setup phase initiated in strategy."
+        super
         request.env['omniauth.strategy'].options[:authorize_params][:launch_nonce] = request.params["launch_nonce"] if request.params["launch_nonce"].present?
       end
 
       def callback_url
         full_host + callback_path
+      end
+
+      def request_phase
+        Rails.logger.debug "(bbbltibroker) Request phase initiated in strategy."
+        super
+      end
+
+      def callback_phase
+        Rails.logger.debug "(bbbltibroker) Callback phase initiated in strategy."
+        super
       end
     end
   end
